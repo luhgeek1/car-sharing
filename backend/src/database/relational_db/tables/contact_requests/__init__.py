@@ -1,0 +1,2 @@
+from .contact_requests_table import ContactRequest
+from .contact_requests_table_interface import ContactRequestInterface
