@@ -1,0 +1,14 @@
+backend/secrets/*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node / Next.js
+node_modules/
+.next/
+frontend/.env.local
+
+# Editor / OS
+.DS_Store
+
