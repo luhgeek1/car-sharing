@@ -190,6 +190,3 @@ Before deploying:
    port; everything should reach it through nginx so `X-Real-IP` is
    trustworthy for rate limiting.
 
-## License
-
-Proprietary — © Righteous Rides. All rights reserved.
