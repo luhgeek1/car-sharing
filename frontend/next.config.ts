@@ -5,7 +5,7 @@ const isGithubPages = process.env.GITHUB_PAGES === "true";
 const nextConfig: NextConfig = {
   output: "export",
   distDir: "../docs",
-  basePath: isGithubPages ? "/car-sharing" : "",
+  basePath: "/car-sharing",
   reactStrictMode: true,
   images: {
     unoptimized: true,
