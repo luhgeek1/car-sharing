@@ -49,6 +49,21 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Restore path after GitHub Pages 404 redirect */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(l) {
+            if (l.search[1] === '/') {
+              var decoded = l.search.slice(1).split('&').map(function(s) {
+                return s.replace(/~and~/g, '&');
+              }).join('?');
+              window.history.replaceState(null, null,
+                l.pathname.slice(0, -1) + decoded + l.hash
+              );
+            }
+          }(window.location));
+        ` }} />
+      </head>
       <body className="min-h-screen flex flex-col bg-black font-sans text-white antialiased">
         <Providers>
           <SiteHeader />

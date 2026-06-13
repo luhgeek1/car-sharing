@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
-const backendUrl =
-  process.env.BACKEND_INTERNAL_URL || "http://localhost:8080";
+const isGithubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig: NextConfig = {
+  output: "export",
+  distDir: "../docs",
+  basePath: isGithubPages ? "/car-sharing" : "",
   reactStrictMode: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -22,14 +25,6 @@ const nextConfig: NextConfig = {
         pathname: "/media-public/**",
       },
     ],
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: `${backendUrl}/api/:path*`,
-      },
-    ];
   },
 };
 
