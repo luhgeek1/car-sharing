@@ -2,26 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  distDir: "docs",
+  distDir: "../docs",
   basePath: "/car-sharing",
   reactStrictMode: true,
   images: {
     unoptimized: true,
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "http",
-        hostname: "localhost",
-        pathname: "/media-public/**",
-      },
-      {
-        protocol: "http",
-        hostname: "127.0.0.1",
-        pathname: "/media-public/**",
-      },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "http", hostname: "localhost", pathname: "/media-public/**" },
+      { protocol: "http", hostname: "127.0.0.1", pathname: "/media-public/**" },
     ],
   },
 };
